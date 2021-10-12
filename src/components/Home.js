@@ -1,31 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Link,
   useRouteMatch,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Nav from './Nav';
+import Search from './Search';
 
 const Home = () => {
   const { url } = useRouteMatch();
+  const [deaths, minDeaths] = useState(1);
+
+  const minDeathCount = (e) => {
+    minDeaths(e.target.value);
+  };
 
   const countries = useSelector((state) => state.covidReducer.covidCountries);
-  const mappedList = countries.map((country) => (
-    <div key={country.name[0]} className="country">
-      <Link href="/#" to={`${url}${country.name[0].toLowerCase()}`}>
-        <div key={country.name[0]} id={country.name[0]} className="country-link">
-          <p>{country.name[0]}</p>
-          <p>{country.confirmed}</p>
-          <p>{country.deaths}</p>
+  const mappedList = countries.filter((country) => deaths <= country.deaths)
+    .sort((a, b) => a.deaths - b.deaths)
+    .map((country) => (
+      <Link
+        key={country.name[0]}
+        href="/#"
+        to={`${url}${country.name[0].toLowerCase()}`}
+        className="country-card"
+      >
+        <div>
+          <div key={country.name[0]} id={country.name[0]} className="country-link">
+            <h2 className="country-name">{country.name[0]}</h2>
+            <p className="cases">
+              TOTAL CASES CONFIRMED:
+              {' '}
+              {country.confirmed}
+            </p>
+            <p className="deaths">
+              TOTAL DEATHS:
+              {' '}
+              {country.deaths}
+            </p>
+          </div>
         </div>
       </Link>
-    </div>
-  ));
+    ));
 
   return (
     <>
-      <Nav backButton="App" title="COVID numbers per Country" />
-      { mappedList }
+      <Nav title="COVID numbers per Country" />
+      <Search value={deaths} handler={minDeathCount} />
+      <div className="countries-container">
+        { mappedList }
+      </div>
     </>
   );
 };
