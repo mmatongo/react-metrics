@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { MicOutlined, SettingsOutlined } from '@mui/icons-material';
+import Back from './Back';
 
 const Nav = ({ backButton, title }) => (
   <div className="nav-container">
-    <div className="nav-content">
-      <p>{backButton}</p>
+    <div className="nav-contents">
+      <Back title={backButton} />
       <p>{title}</p>
-      <i>
-        Thing 1
-      </i>
-      <br />
-      <i>
-        Thing 2
-      </i>
+      <div className="nav-icons">
+        <MicOutlined className="nav-icon" />
+        <SettingsOutlined className="nav-icon" />
+      </div>
     </div>
   </div>
 );
