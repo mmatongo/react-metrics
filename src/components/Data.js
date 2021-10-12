@@ -21,27 +21,57 @@ const Data = ({ name }) => {
   }, []);
 
   return (
-    <>
-      <Nav title="Country Data" backButton="Countries" />
-      <h2>Data</h2>
-      <p>{covidStats?.name}</p>
-      <p>
-        Deaths until today:
-        {covidStats?.today_deaths}
-      </p>
-      <p>
-        Deaths today:
-        {covidStats?.today_new_deaths}
-      </p>
-      <p>
-        Confirmed cases until today:
-        {covidStats?.today_confirmed}
-      </p>
-      <p>
-        Confirmed cases today:
-        {covidStats?.today_new_confirmed}
-      </p>
-    </>
+    <div className="country-container">
+      <Nav title="Contry details" backButton="< Back" />
+      <div className="country-details">
+        <h2>{covidStats?.name}</h2>
+        <p>
+          Source:
+          {' '}
+          {covidStats?.source}
+        </p>
+        <p>
+          Deaths until today:
+          {' '}
+          {covidStats?.today_deaths}
+        </p>
+        <p>
+          Deaths today:
+          {' '}
+          {covidStats?.today_new_deaths}
+        </p>
+        <p>
+          Confirmed cases until today:
+          {' '}
+          {covidStats?.today_confirmed}
+        </p>
+        <p>
+          Confirmed cases today:
+          {' '}
+          {covidStats?.today_new_confirmed}
+        </p>
+        <p>
+          Open cases until today:
+          {' '}
+          {covidStats?.today_open_cases}
+        </p>
+        <p>
+          Recovered cases until today:
+          {' '}
+          {covidStats?.today_recovered}
+        </p>
+        <p>
+          New open cases:
+          {' '}
+          {covidStats?.today_new_open_cases}
+        </p>
+        <p>
+          New recovered cases:
+          {' '}
+          {covidStats?.today_new_recovered}
+        </p>
+      </div>
+    </div>
   );
 };
 
