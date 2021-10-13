@@ -25,7 +25,7 @@ Width - 375px
 [Live Demo Link](https://lucid-ptolemy-f1afc5.netlify.app/)
 
 ## Video Presentation
-[Video Presentation](https://www.loom.com/share/f7e2ff7614d4472b8f4d67f26c957225)
+[Video Presentation](https://www.loom.com/share/fdcf1de9240f46a08f1b897ac8ab92b4)
 
 ## Getting Started
 
