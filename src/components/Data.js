@@ -22,7 +22,7 @@ const Data = ({ name }) => {
 
   return (
     <div className="country-container">
-      <Nav title="Contry details" backButton="< Back" />
+      <Nav title="Contry Details" backButton="< Back" />
       <div className="country-details">
         <h2>{covidStats?.name}</h2>
         <p>

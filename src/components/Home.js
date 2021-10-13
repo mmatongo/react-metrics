@@ -9,7 +9,7 @@ import Search from './Search';
 
 const Home = () => {
   const { url } = useRouteMatch();
-  const [deaths, minDeaths] = useState(1);
+  const [deaths, minDeaths] = useState('');
 
   const minDeathCount = (e) => {
     minDeaths(e.target.value);
@@ -17,7 +17,6 @@ const Home = () => {
 
   const countries = useSelector((state) => state.covidReducer.covidCountries);
   const mappedList = countries.filter((country) => deaths <= country.deaths)
-    .sort((a, b) => a.deaths - b.deaths)
     .map((country) => (
       <Link
         key={country.name[0]}
