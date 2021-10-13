@@ -1,8 +1,8 @@
 import moment from 'moment';
 
-const GET_DETAILS = 'covid_details/detailsslice/GET_DETAILS';
-const GET_DETAILS_SUCCESS = 'covid_details/detailsslice/GET_DETAILS_SUCCESS';
-const GET_DETAILS_ERR = 'covid_details/detailsslice/GET_DETAILS_ERR';
+const GET_DETAILS = 'covid_data/detailsslice/GET_DETAILS';
+const GET_DETAILS_SUCCESS = 'covid_data/detailsslice/GET_DETAILS_SUCCESS';
+const GET_DETAILS_ERR = 'covid_data/detailsslice/GET_DETAILS_ERR';
 
 const today = moment().format('YYYY-MM-DD');
 
