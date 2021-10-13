@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import getCovidData from './containers/redux/slices/covidSlice';
+import Home from './components/Home';
+import Data from './components/Data';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(async () => {
+    dispatch(getCovidData());
+  }, []);
+
+  const countries = useSelector((state) => state.covidReducer.covidCountries);
+
+  const routes = countries.map((country) => (
+    <Route key={country.name[0]} path={`/${country.name[0].toLowerCase()}`}>
+      <Data name={country.name[0]} />
+    </Route>
+  ));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          { routes }
+        </Switch>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
