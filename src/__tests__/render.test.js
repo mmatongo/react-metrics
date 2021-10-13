@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Home from '../components/Home';
-import store from '../redux/configureStore';
+import store from '../containers/redux/configureStore';
 import Nav from '../components/Nav';
 import Search from '../components/Search';
 import Data from '../components/Data';

@@ -6,7 +6,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import getCovidData from './redux/slices/covidSlice';
+import getCovidData from './containers/redux/slices/covidSlice';
 import Home from './components/Home';
 import Data from './components/Data';
 

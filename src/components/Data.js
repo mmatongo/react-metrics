@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Nav from './Nav';
-import pullData from '../redux/slices/dataSlice';
+import pullData from '../containers/redux/slices/dataSlice';
 
 const Data = ({ name }) => {
   const { url } = useRouteMatch();

@@ -1,5 +1,5 @@
-import covidReducer from '../redux/reducers/covid';
-import dataReducer from '../redux/reducers/data';
+import covidReducer from '../containers/redux/reducers/covid';
+import dataReducer from '../containers/redux/reducers/data';
 
 const mockStore = {
   covid: {
