@@ -22,7 +22,7 @@ Width - 375px
 
 ## Live Demo
 
-[Live Demo Link](https://lucid-ptolemy-f1afc5.netlify.app/)
+[Live Demo Link](https://epic-darwin-4e48d2.netlify.app/)
 
 ## Video Presentation
 [Video Presentation](https://www.loom.com/share/6e4b2ad8e74c4901a916fd00c56aff24)
